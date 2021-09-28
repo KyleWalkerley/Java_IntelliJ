@@ -21,10 +21,9 @@ public class ReadingUserInput {
         int counter = 0;
         int sum = 0;
 
-//        while(true) {
-        while(counter < 10) {
-            int order = counter + 1;
-            System.out.println("Enter number #" + order + ":");
+        while((counter >= 0) && (counter< 11)) {
+            int num = counter + 1;
+            System.out.println("Enter number #" + num);
 
             boolean isAnInt = scanner.hasNextInt();
 
@@ -32,9 +31,6 @@ public class ReadingUserInput {
                 int number = scanner.nextInt();
                 counter++;
                 sum += number;
-//               if(counter == 10) {
-//                   break;
-//               }
             } else {
                 System.out.println("Invalid number");
             }
