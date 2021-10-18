@@ -1,6 +1,6 @@
 package Vid98;
 
-public class Healthburger extends Hamburger {
+public class HealthyBurger extends Hamburger {
 
     private String healthyExtra1Name;
     private double healthyExtra1Price;
@@ -8,7 +8,7 @@ public class Healthburger extends Hamburger {
     private String healthyExtra2Name;
     private double healthyExtra2Price;
 
-    public Healthburger(String meat, double price) {
+    public HealthyBurger(String meat, double price) {
         super("Healthy", meat, price, "Brown rye");
     }
 
