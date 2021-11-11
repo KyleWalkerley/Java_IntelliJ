@@ -2,7 +2,9 @@ package com.company;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 
 public class Soccer {
@@ -13,6 +15,9 @@ public class Soccer {
         Scanner sc = null;
         String match, team1, team2, score1, score2, left, right;
         String [] sides, l1, l2;
+
+        Map<String, Integer> scoreboard = new TreeMap<String, Integer>();
+
         try {
             sc = new Scanner(file);
         } catch (FileNotFoundException e) {
@@ -22,8 +27,6 @@ public class Soccer {
         while (sc.hasNextLine()) {
             match = sc.nextLine();
             sides = match.split(",");
-//            left = sides[0];
-//            right = sides[1];
 
             l1 = sides[0].split(" ");
             team1 = l1[0];
@@ -31,6 +34,20 @@ public class Soccer {
             l2 = sides[1].split(" ");
             team2 = l2[0];
             score2 = l2[1];
+
+            int team1Points;
+            int team2Points;
+
+            if (score1 > score2){
+                team1Points = 3;
+                team2Points = 0;
+            }else if (score1 < score2){
+                team1Points = 0;
+                team2Points = 3;
+            }else{
+                team1Points = 1;
+                team2Points = 1;
+            }
 
 
 
